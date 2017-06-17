@@ -47,333 +47,959 @@ public class CreateGround : MonoBehaviour {
 
 		//ALL VC POINTS:
 
+
+
+//		//BAD BLOCK
+//		//SHOULD BE BAD
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.16764f,-0.0700706f,-0.5f),
+//			new Vector3(-0.0464072f,-0.0647357f,-0.5f),
+//			new Vector3(-0.144536f,0.237344f,-0.5f),
+//			new Vector3(-0.149231f,0.240476f,-0.5f),
+//
+//			new Vector3(-0.16764f,-0.0700706f,0.5f),
+//			new Vector3(-0.0464072f,-0.0647357f,0.5f),
+//			new Vector3(-0.144536f,0.237344f,0.5f),
+//			new Vector3(-0.149231f,0.240476f,0.5f),
+//
+//		});
+//
+//		//Fails on completely parallel triangles
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.348162f,-0.0982212f,-0.5f),
+//			new Vector3(-0.0326806f,-0.398012f,0.5f),
+//			new Vector3(-0.348162f,-0.0982212f,0.5f),
+//			//new Vector3(-0.0326806f,-0.398012f,-0.2f),//Introduced a way point
+//			new Vector3(-0.0326806f,-0.398012f,-0.5f),
+//			new Vector3(-0.232884f,-0.0832066f,-0.5f),
+//			new Vector3(-0.232884f,-0.0832066f,0.5f),
+//
+//		});
+
+//		//TEST #2
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-1f,-1f,-0.5f),
+//			new Vector3(0.536051f,-1f,-0.5f),
+//			new Vector3(-0.191468f,-0.375987f,-0.5f),
+//			new Vector3(0.0555073f,-0.372317f,-0.5f),
+//			new Vector3(-1f,-1f,0.5f),
+//			new Vector3(0.536051f,-1f,0.5f),
+//			new Vector3(0.0173284f,-0.361066f,0.5f),
+//			new Vector3(0.0555073f,-0.372317f,0.5f),
+//			new Vector3(0.0173284f,-0.361066f,-0.5f),
+//			new Vector3(-1f,-0.795192f,-0.5f),
+//			new Vector3(-1f,-0.795192f,0.5f),
+//			new Vector3(-0.191468f,-0.375987f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.102548f,-0.119624f,-0.5f),
+//			new Vector3(-0.0611588f,-0.0380439f,-0.5f),
+//			new Vector3(0.00741258f,-0.118741f,0.5f),
+//			new Vector3(0.00741258f,-0.118741f,-0.5f),
+//			new Vector3(-0.102548f,-0.119624f,0.5f),
+//			new Vector3(-0.006146f,-0.0269761f,-0.5f),
+//			new Vector3(-0.0611588f,-0.0380439f,0.5f),
+//			new Vector3(-0.006146f,-0.0269761f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.191468f,-0.375987f,0.5f),
+//			new Vector3(-0.191468f,-0.375987f,-0.5f),
+//			new Vector3(-0.0793624f,-0.200597f,-0.5f),
+//			new Vector3(-0.0340186f,-0.214759f,0.5f),
+//			new Vector3(0.0173284f,-0.361066f,0.5f),
+//			new Vector3(-0.0340186f,-0.214759f,-0.5f),
+//			new Vector3(-0.0793624f,-0.200597f,0.5f),
+//			new Vector3(0.0173284f,-0.361066f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-1f,-0.795192f,-0.5f),
+//			new Vector3(-0.0793624f,-0.200597f,-0.5f),
+//			new Vector3(-0.107104f,-0.12395f,-0.5f),
+//			new Vector3(-0.0793624f,-0.200597f,0.5f),
+//			new Vector3(-1f,-0.795192f,0.5f),
+//			new Vector3(-0.191468f,-0.375987f,0.5f),
+//			new Vector3(-1f,-0.781501f,0.5f),
+//			new Vector3(-1f,-0.781501f,-0.5f),
+//			new Vector3(-0.191468f,-0.375987f,-0.5f),
+//			new Vector3(-0.107104f,-0.12395f,0.5f),
+//			new Vector3(-0.257323f,-0.0957589f,0.5f),
+//			new Vector3(-0.257323f,-0.0957589f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.00741258f,-0.118741f,0.5f),
+//			new Vector3(-0.0793624f,-0.200597f,-0.5f),
+//			new Vector3(-0.107104f,-0.12395f,0.5f),
+//			new Vector3(0.123349f,-0.160472f,0.5f),
+//			new Vector3(-0.0340186f,-0.214759f,0.5f),
+//			new Vector3(-0.0340186f,-0.214759f,-0.5f),
+//			new Vector3(-0.0793624f,-0.200597f,0.5f),
+//			new Vector3(-0.102548f,-0.119624f,0.5f),
+//			new Vector3(-0.102548f,-0.119624f,-0.5f),
+//			new Vector3(-0.107104f,-0.12395f,-0.5f),
+//			new Vector3(0.12004f,-0.17124f,0.5f),
+//			new Vector3(0.12004f,-0.17124f,-0.5f),
+//			new Vector3(0.123349f,-0.160472f,-0.5f),
+//			new Vector3(0.00741258f,-0.118741f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.257323f,-0.0957589f,0.5f),
+//			new Vector3(-0.102548f,-0.119624f,0.5f),
+//			new Vector3(-0.171954f,0.0668147f,0.5f),
+//			new Vector3(-0.117652f,0.0686361f,-0.5f),
+//			new Vector3(-0.257323f,-0.0957589f,-0.5f),
+//			new Vector3(-0.107104f,-0.12395f,0.5f),
+//			new Vector3(-0.124183f,0.0732046f,0.5f),
+//			new Vector3(-0.0611588f,-0.0380439f,-0.5f),
+//			new Vector3(-0.107104f,-0.12395f,-0.5f),
+//			new Vector3(-0.102548f,-0.119624f,-0.5f),
+//			new Vector3(-0.117652f,0.0686361f,0.5f),
+//			new Vector3(-0.0611588f,-0.0380439f,0.5f),
+//			new Vector3(-0.124183f,0.0732046f,-0.5f),
+//			new Vector3(-0.171954f,0.0668147f,-0.5f),
+//			new Vector3(-0.254036f,-0.0717289f,0.5f),
+//			new Vector3(-0.254036f,-0.0717289f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.536051f,-1f,0.5f),
+//			new Vector3(0.855617f,-1f,-0.5f),
+//			new Vector3(0.121255f,-0.180823f,-0.5f),
+//			new Vector3(0.121255f,-0.180823f,0.5f),
+//			new Vector3(0.0555073f,-0.372317f,0.5f),
+//			new Vector3(0.855617f,-1f,0.5f),
+//			new Vector3(0.0555073f,-0.372317f,-0.5f),
+//			new Vector3(0.536051f,-1f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.267402f,0.130015f,-0.5f),
+//			new Vector3(1f,-0.194706f,0.5f),
+//			new Vector3(0.165052f,-0.118485f,0.5f),
+//			new Vector3(0.846305f,0.532869f,-0.5f),
+//			new Vector3(1f,-0.194706f,-0.5f),
+//			new Vector3(0.165052f,-0.118485f,-0.5f),
+//			new Vector3(0.267402f,0.130015f,0.5f),
+//			new Vector3(1f,0.59539f,-0.5f),
+//			new Vector3(0.846305f,0.532869f,0.5f),
+//			new Vector3(1f,0.59539f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.855617f,-1f,-0.5f),
+//			new Vector3(1f,-1f,-0.5f),
+//			new Vector3(0.121255f,-0.180823f,0.5f),
+//			new Vector3(1f,-0.194706f,-0.5f),
+//			new Vector3(0.855617f,-1f,0.5f),
+//			new Vector3(1f,-1f,0.5f),
+//			new Vector3(0.147274f,-0.12381f,-0.5f),
+//			new Vector3(1f,-0.194706f,0.5f),
+//			new Vector3(0.12004f,-0.17124f,0.5f),
+//			new Vector3(0.121255f,-0.180823f,-0.5f),
+//			new Vector3(0.123349f,-0.160472f,0.5f),
+//			new Vector3(0.165052f,-0.118485f,-0.5f),
+//			new Vector3(0.123349f,-0.160472f,-0.5f),
+//			new Vector3(0.12004f,-0.17124f,-0.5f),
+//			new Vector3(0.147274f,-0.12381f,0.5f),
+//			new Vector3(0.165052f,-0.118485f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.12004f,-0.17124f,-0.5f),
+//			new Vector3(-0.0340186f,-0.214759f,-0.5f),
+//			new Vector3(0.12004f,-0.17124f,0.5f),
+//			new Vector3(0.121255f,-0.180823f,0.5f),
+//			new Vector3(0.0555073f,-0.372317f,-0.5f),
+//			new Vector3(0.0555073f,-0.372317f,0.5f),
+//			new Vector3(-0.0340186f,-0.214759f,0.5f),
+//			new Vector3(0.121255f,-0.180823f,-0.5f),
+//			new Vector3(0.0173284f,-0.361066f,0.5f),
+//			new Vector3(0.0173284f,-0.361066f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.00741258f,-0.118741f,-0.5f),
+//			new Vector3(0.123349f,-0.160472f,0.5f),
+//			new Vector3(0.0657027f,0.00496402f,-0.5f),
+//			new Vector3(0.0657027f,0.00496402f,0.5f),
+//			new Vector3(0.00741258f,-0.118741f,0.5f),
+//			new Vector3(0.123349f,-0.160472f,-0.5f),
+//			new Vector3(-0.006146f,-0.0269761f,-0.5f),
+//			new Vector3(-0.006146f,-0.0269761f,0.5f),
+//			new Vector3(0.147274f,-0.12381f,-0.5f),
+//			new Vector3(0.147274f,-0.12381f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-1f,-0.781501f,0.5f),
+//			new Vector3(-0.660971f,0.601722f,-0.5f),
+//			new Vector3(-1f,0.909721f,-0.5f),
+//			new Vector3(-0.752045f,0.71827f,0.5f),
+//			new Vector3(-0.257323f,-0.0957589f,-0.5f),
+//			new Vector3(-0.254036f,-0.0717289f,-0.5f),
+//			new Vector3(-1f,0.909721f,0.5f),
+//			new Vector3(-0.752045f,0.71827f,-0.5f),
+//			new Vector3(-1f,-0.781501f,-0.5f),
+//			new Vector3(-0.660971f,0.601722f,0.5f),
+//			new Vector3(-0.254036f,-0.0717289f,0.5f),
+//			new Vector3(-0.257323f,-0.0957589f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.124183f,0.0732046f,0.5f),
+//			new Vector3(0.0399654f,0.0694558f,0.5f),
+//			new Vector3(-0.0225365f,0.3006f,-0.5f),
+//			new Vector3(0.0399654f,0.0694558f,-0.5f),
+//			new Vector3(-0.124183f,0.0732046f,-0.5f),
+//			new Vector3(-0.0225365f,0.3006f,0.5f),
+//			new Vector3(-0.117652f,0.0686361f,-0.5f),
+//			new Vector3(-0.117652f,0.0686361f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.0680041f,0.0421237f,-0.5f),
+//			new Vector3(-0.006146f,-0.0269761f,0.5f),
+//			new Vector3(-0.117652f,0.0686361f,-0.5f),
+//			new Vector3(0.0399654f,0.0694558f,0.5f),
+//			new Vector3(0.0399654f,0.0694558f,-0.5f),
+//			new Vector3(0.0680041f,0.0421237f,0.5f),
+//			new Vector3(-0.0611588f,-0.0380439f,-0.5f),
+//			new Vector3(0.0657027f,0.00496402f,0.5f),
+//			new Vector3(-0.0611588f,-0.0380439f,0.5f),
+//			new Vector3(-0.117652f,0.0686361f,0.5f),
+//			new Vector3(-0.006146f,-0.0269761f,-0.5f),
+//			new Vector3(0.0657027f,0.00496402f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.660971f,0.601722f,-0.5f),
+//			new Vector3(-0.660971f,0.601722f,0.5f),
+//			new Vector3(-0.254036f,-0.0717289f,-0.5f),
+//			new Vector3(-0.171954f,0.0668147f,-0.5f),
+//			new Vector3(-0.171954f,0.0668147f,0.5f),
+//			new Vector3(-0.254036f,-0.0717289f,0.5f),
+//			new Vector3(-0.254036f,-0.0717289f,0f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.171954f,0.0668147f,0.5f),
+//			new Vector3(-0.124183f,0.0732046f,-0.5f),
+//			new Vector3(-0.752045f,0.71827f,-0.5f),
+//			new Vector3(-0.0219509f,0.323106f,0.5f),
+//			new Vector3(-0.660971f,0.601722f,0.5f),
+//			new Vector3(-0.124183f,0.0732046f,0.5f),
+//			new Vector3(-0.752045f,0.71827f,0.5f),
+//			new Vector3(-0.0219509f,0.323106f,-0.5f),
+//			new Vector3(-0.660971f,0.601722f,-0.5f),
+//			new Vector3(-0.171954f,0.0668147f,-0.5f),
+//			new Vector3(-0.0225365f,0.3006f,-0.5f),
+//			new Vector3(-0.0225365f,0.3006f,0.5f),
+//			new Vector3(-0.0216151f,0.309922f,-0.5f),
+//			new Vector3(-0.0216151f,0.309922f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.0219509f,0.323106f,0.5f),
+//			new Vector3(0.151151f,0.0961385f,-0.5f),
+//			new Vector3(-0.0219509f,0.323106f,-0.5f),
+//			new Vector3(0.846305f,0.532869f,-0.5f),
+//			new Vector3(0.267402f,0.130015f,-0.5f),
+//			new Vector3(0.846305f,0.532869f,0.5f),
+//			new Vector3(0.267402f,0.130015f,0.5f),
+//			new Vector3(0.151151f,0.0961385f,0.5f),
+//			new Vector3(-0.0216151f,0.309922f,-0.5f),
+//			new Vector3(-0.0216151f,0.309922f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.151151f,0.0961385f,-0.5f),
+//			new Vector3(0.0680041f,0.0421237f,0.5f),
+//			new Vector3(-0.0225365f,0.3006f,-0.5f),
+//			new Vector3(0.0399654f,0.0694558f,0.5f),
+//			new Vector3(0.151151f,0.0961385f,0.5f),
+//			new Vector3(-0.0216151f,0.309922f,-0.5f),
+//			new Vector3(0.0399654f,0.0694558f,-0.5f),
+//			new Vector3(0.0680041f,0.0421237f,-0.5f),
+//			new Vector3(-0.0225365f,0.3006f,0.5f),
+//			new Vector3(-0.0216151f,0.309922f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.0680041f,0.0421237f,-0.5f),
+//			new Vector3(0.0657027f,0.00496402f,-0.5f),
+//			new Vector3(0.151151f,0.0961385f,-0.5f),
+//			new Vector3(0.267402f,0.130015f,-0.5f),
+//			new Vector3(0.147274f,-0.12381f,-0.5f),
+//			new Vector3(0.147274f,-0.12381f,0.5f),
+//			new Vector3(0.151151f,0.0961385f,0.5f),
+//			new Vector3(0.267402f,0.130015f,0.5f),
+//			new Vector3(0.165052f,-0.118485f,-0.5f),
+//			new Vector3(0.165052f,-0.118485f,0.5f),
+//			new Vector3(0.0657027f,0.00496402f,0.5f),
+//			new Vector3(0.0680041f,0.0421237f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-1f,0.909721f,0.5f),
+//			new Vector3(1f,0.59539f,0.5f),
+//			new Vector3(-1f,1f,-0.5f),
+//			new Vector3(1f,1f,-0.5f),
+//			new Vector3(-1f,0.909721f,-0.5f),
+//			new Vector3(0.846305f,0.532869f,0.5f),
+//			new Vector3(-1f,1f,0.5f),
+//			new Vector3(1f,1f,0.5f),
+//			new Vector3(-0.0219509f,0.323106f,0.5f),
+//			new Vector3(-0.0219509f,0.323106f,-0.5f),
+//			new Vector3(-0.752045f,0.71827f,0.5f),
+//			new Vector3(-0.752045f,0.71827f,-0.5f),
+//			new Vector3(0.846305f,0.532869f,-0.5f),
+//			new Vector3(1f,0.59539f,-0.5f),
+//
+//		});
+
+
+
+//		//TEST#3
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-1f,-0.960555f,0.5f),
+//			new Vector3(-1f,-0.960555f,-0.5f),
+//			new Vector3(-1f,0.55324f,-0.5f),
+//			new Vector3(-0.426258f,0.124114f,0.5f),
+//			new Vector3(-0.304973f,-0.213889f,0.5f),
+//			new Vector3(-0.479205f,0.176951f,0.5f),
+//			new Vector3(-1f,0.55324f,0.5f),
+//			new Vector3(-0.304973f,-0.213889f,-0.5f),
+//			new Vector3(-0.426258f,0.124114f,-0.5f),
+//			new Vector3(-0.479205f,0.176951f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.186329f,-0.243634f,0.5f),
+//			new Vector3(-0.186329f,-0.243634f,-0.5f),
+//			new Vector3(0.0540037f,-0.225309f,-0.5f),
+//			new Vector3(0.0540037f,-0.225309f,0.5f),
+//			new Vector3(-0.217051f,-0.197398f,0.5f),
+//			new Vector3(-0.217051f,-0.197398f,-0.5f),
+//			new Vector3(-0.151959f,-0.0789192f,0.5f),
+//			new Vector3(-0.104137f,-0.077778f,0.5f),
+//			new Vector3(-0.104137f,-0.077778f,-0.5f),
+//			new Vector3(-0.151959f,-0.0789192f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.304973f,-0.213889f,-0.5f),
+//			new Vector3(-0.217051f,-0.197398f,-0.5f),
+//			new Vector3(-0.426258f,0.124114f,-0.5f),
+//			new Vector3(-0.151959f,-0.0789192f,0.5f),
+//			new Vector3(-0.304973f,-0.213889f,0.5f),
+//			new Vector3(-0.217051f,-0.197398f,0.5f),
+//			new Vector3(-0.426258f,0.124114f,0.5f),
+//			new Vector3(-0.151959f,-0.0789192f,-0.5f),
+//			new Vector3(-0.254596f,0.0110088f,-0.5f),
+//			new Vector3(-0.254596f,0.0110088f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-1f,-1f,-0.5f),
+//			new Vector3(-0.304973f,-0.213889f,-0.5f),
+//			new Vector3(-0.186329f,-0.243634f,-0.5f),
+//			new Vector3(-0.217051f,-0.197398f,0.5f),
+//			new Vector3(-1f,-1f,0.5f),
+//			new Vector3(-0.0660014f,-1f,-0.5f),
+//			new Vector3(-0.217051f,-0.197398f,-0.5f),
+//			new Vector3(-0.304973f,-0.213889f,0.5f),
+//			new Vector3(-0.186329f,-0.243634f,0.5f),
+//			new Vector3(-0.0660014f,-1f,0.5f),
+//			new Vector3(-1f,-0.960555f,-0.5f),
+//			new Vector3(-1f,-0.960555f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.0660014f,-1f,-0.5f),
+//			new Vector3(0.298754f,-0.441025f,-0.5f),
+//			new Vector3(-0.186329f,-0.243634f,-0.5f),
+//			new Vector3(0.0854744f,-0.245537f,0.5f),
+//			new Vector3(-0.0660014f,-1f,0.5f),
+//			new Vector3(0.607584f,-1f,-0.5f),
+//			new Vector3(-0.186329f,-0.243634f,0.5f),
+//			new Vector3(0.0854744f,-0.245537f,-0.5f),
+//			new Vector3(0.0540037f,-0.225309f,-0.5f),
+//			new Vector3(0.0540037f,-0.225309f,0.5f),
+//			new Vector3(0.298754f,-0.441025f,0.5f),
+//			new Vector3(0.607584f,-1f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.00424733f,0.0677186f,-0.5f),
+//			new Vector3(0.0854744f,-0.245537f,0.5f),
+//			new Vector3(-0.104137f,-0.077778f,-0.5f),
+//			new Vector3(0.0421851f,0.0652789f,-0.5f),
+//			new Vector3(-0.104137f,-0.077778f,0.5f),
+//			new Vector3(0.0540037f,-0.225309f,0.5f),
+//			new Vector3(-0.00424733f,0.0677186f,0.5f),
+//			new Vector3(0.0421851f,0.0652789f,0.5f),
+//			new Vector3(0.0540037f,-0.225309f,-0.5f),
+//			new Vector3(0.0854744f,-0.245537f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.22418f,0.03625f,0.5f),
+//			new Vector3(0.298754f,-0.441025f,-0.5f),
+//			new Vector3(0.0421851f,0.0652789f,-0.5f),
+//			new Vector3(0.0854744f,-0.245537f,-0.5f),
+//			new Vector3(0.298754f,-0.441025f,0.5f),
+//			new Vector3(0.22418f,0.03625f,-0.5f),
+//			new Vector3(0.0421851f,0.0652789f,0.5f),
+//			new Vector3(0.0854744f,-0.245537f,0.5f),
+//			new Vector3(0.174432f,0.0976613f,-0.5f),
+//			new Vector3(0.174432f,0.0976613f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.0692106f,0.1823f,-0.5f),
+//			new Vector3(-0.0473917f,0.169589f,-0.5f),
+//			new Vector3(-0.150062f,0.303337f,-0.5f),
+//			new Vector3(0.0137812f,0.261091f,0.5f),
+//			new Vector3(-0.0692106f,0.1823f,0.5f),
+//			new Vector3(-0.00990032f,0.297795f,-0.5f),
+//			new Vector3(-0.150062f,0.303337f,0.5f),
+//			new Vector3(-0.0296384f,0.314197f,-0.5f),
+//			new Vector3(-0.0473917f,0.169589f,0.5f),
+//			new Vector3(0.0137812f,0.261091f,-0.5f),
+//			new Vector3(-0.0296384f,0.314197f,0.5f),
+//			new Vector3(-0.00990032f,0.297795f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.0828026f,0.091434f,0.5f),
+//			new Vector3(-0.426258f,0.124114f,0.5f),
+//			new Vector3(-0.254596f,0.0110088f,0.5f),
+//			new Vector3(-0.254596f,0.0110088f,-0.5f),
+//			new Vector3(-0.0828026f,0.091434f,-0.5f),
+//			new Vector3(-0.201087f,0.146032f,0.5f),
+//			new Vector3(-0.201087f,0.146032f,-0.5f),
+//			new Vector3(-0.426258f,0.124114f,-0.5f),
+//			new Vector3(-0.479205f,0.176951f,0.5f),
+//			new Vector3(-0.479205f,0.176951f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.479205f,0.176951f,-0.5f),
+//			new Vector3(-0.0692106f,0.1823f,0.5f),
+//			new Vector3(-1f,0.582126f,-0.5f),
+//			new Vector3(-0.150062f,0.303337f,-0.5f),
+//			new Vector3(-1f,0.55324f,-0.5f),
+//			new Vector3(-0.201087f,0.146032f,0.5f),
+//			new Vector3(-1f,0.582126f,0.5f),
+//			new Vector3(-0.150062f,0.303337f,0.5f),
+//			new Vector3(-0.201087f,0.146032f,-0.5f),
+//			new Vector3(-0.0692106f,0.1823f,-0.5f),
+//			new Vector3(-0.479205f,0.176951f,0.5f),
+//			new Vector3(-1f,0.55324f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.201087f,0.146032f,0.5f),
+//			new Vector3(-0.0692106f,0.1823f,0.5f),
+//			new Vector3(-0.0473917f,0.169589f,0.5f),
+//			new Vector3(-0.0179331f,0.0835178f,0.5f),
+//			new Vector3(-0.0828026f,0.091434f,0.5f),
+//			new Vector3(-0.0828026f,0.091434f,0f),
+//			new Vector3(-0.201087f,0.146032f,-0.5f),
+//			new Vector3(-0.0692106f,0.1823f,-0.5f),
+//			new Vector3(-0.0828026f,0.091434f,-0.5f),
+//			new Vector3(-0.0179331f,0.0835178f,-0.5f),
+//			new Vector3(-0.0473917f,0.169589f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.254596f,0.0110088f,0.5f),
+//			new Vector3(-0.151959f,-0.0789192f,0.5f),
+//			new Vector3(-0.104137f,-0.077778f,0.5f),
+//			new Vector3(-0.0828026f,0.091434f,-0.5f),
+//			new Vector3(-0.0179331f,0.0835178f,-0.5f),
+//			new Vector3(-0.0828026f,0.091434f,0.5f),
+//			new Vector3(-0.0179331f,0.0835178f,0.5f),
+//			new Vector3(-0.104137f,-0.077778f,-0.5f),
+//			new Vector3(-0.254596f,0.0110088f,-0.5f),
+//			new Vector3(-0.151959f,-0.0789192f,-0.5f),
+//			new Vector3(-0.011291f,0.0763045f,0.5f),
+//			new Vector3(-0.011291f,0.0763045f,-0.5f),
+//			new Vector3(-0.00424733f,0.0677186f,-0.5f),
+//			new Vector3(-0.00424733f,0.0677186f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.011291f,0.0763045f,0.5f),
+//			new Vector3(-0.011291f,0.0763045f,-0.5f),
+//			new Vector3(0.189929f,0.226259f,0.5f),
+//			new Vector3(0.189929f,0.226259f,-0.5f),
+//			new Vector3(0.174432f,0.0976613f,0.5f),
+//			new Vector3(0.0421851f,0.0652789f,0.5f),
+//			new Vector3(0.0536377f,0.249979f,-0.5f),
+//			new Vector3(0.0536377f,0.249979f,0.5f),
+//			new Vector3(-0.00424733f,0.0677186f,0.5f),
+//			new Vector3(-0.00424733f,0.0677186f,-0.5f),
+//			new Vector3(0.0421851f,0.0652789f,-0.5f),
+//			new Vector3(0.174432f,0.0976613f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.22418f,0.03625f,-0.5f),
+//			new Vector3(1f,0.27234f,-0.5f),
+//			new Vector3(1f,0.792096f,-0.5f),
+//			new Vector3(1f,0.792096f,0.5f),
+//			new Vector3(0.174432f,0.0976613f,-0.5f),
+//			new Vector3(1f,0.27234f,0.5f),
+//			new Vector3(0.271967f,0.357577f,-0.5f),
+//			new Vector3(0.271967f,0.357577f,0.5f),
+//			new Vector3(0.189929f,0.226259f,-0.5f),
+//			new Vector3(0.189929f,0.226259f,0.5f),
+//			new Vector3(0.22418f,0.03625f,0.5f),
+//			new Vector3(0.174432f,0.0976613f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.0473917f,0.169589f,0.5f),
+//			new Vector3(0.0536377f,0.249979f,0.5f),
+//			new Vector3(0.0137812f,0.261091f,0.5f),
+//			new Vector3(-0.0179331f,0.0835178f,0.5f),
+//			new Vector3(-0.011291f,0.0763045f,0.5f),
+//			//new Vector3(-0.011291f,0.0763045f,0f),
+//			new Vector3(-0.0473917f,0.169589f,-0.5f),
+//			new Vector3(0.0536377f,0.249979f,-0.5f),
+//			new Vector3(0.0137812f,0.261091f,-0.5f),
+//			new Vector3(-0.0179331f,0.0835178f,-0.5f),
+//			new Vector3(-0.011291f,0.0763045f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.0536377f,0.249979f,-0.5f),
+//			new Vector3(0.189929f,0.226259f,-0.5f),
+//			new Vector3(0.140247f,0.396627f,0.5f),
+//			new Vector3(0.271967f,0.357577f,0.5f),
+//			new Vector3(0.0137812f,0.261091f,0.5f),
+//			new Vector3(0.189929f,0.226259f,0.5f),
+//			new Vector3(0.0536377f,0.249979f,0.5f),
+//			new Vector3(0.0137812f,0.261091f,-0.5f),
+//			new Vector3(0.271967f,0.357577f,-0.5f),
+//			new Vector3(0.140247f,0.396627f,-0.5f),
+//			new Vector3(-0.00990032f,0.297795f,0.5f),
+//			new Vector3(-0.00990032f,0.297795f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.607584f,-1f,0.5f),
+//			new Vector3(1f,-1f,-0.5f),
+//			new Vector3(0.22418f,0.03625f,-0.5f),
+//			new Vector3(1f,0.27234f,-0.5f),
+//			new Vector3(0.298754f,-0.441025f,0.5f),
+//			new Vector3(1f,-1f,0.5f),
+//			new Vector3(0.22418f,0.03625f,0.5f),
+//			new Vector3(1f,0.27234f,0.5f),
+//			new Vector3(0.298754f,-0.441025f,-0.5f),
+//			new Vector3(0.607584f,-1f,-0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.150062f,0.303337f,-0.5f),
+//			new Vector3(-0.0296384f,0.314197f,-0.5f),
+//			new Vector3(-1f,1f,-0.5f),
+//			new Vector3(-0.360437f,1f,0.5f),
+//			new Vector3(-1f,0.582126f,-0.5f),
+//			new Vector3(-0.0296384f,0.314197f,0.5f),
+//			new Vector3(-1f,1f,0.5f),
+//			new Vector3(0.00799953f,0.465615f,0.5f),
+//			new Vector3(0.00799953f,0.465615f,-0.5f),
+//			new Vector3(-0.360437f,1f,-0.5f),
+//			new Vector3(-0.150062f,0.303337f,0.5f),
+//			new Vector3(-1f,0.582126f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.140247f,0.396627f,0.5f),
+//			new Vector3(0.140247f,0.396627f,-0.5f),
+//			new Vector3(0.00799953f,0.465615f,-0.5f),
+//			new Vector3(0.00799953f,0.465615f,0.5f),
+//			new Vector3(-0.0296384f,0.314197f,-0.5f),
+//			new Vector3(-0.0296384f,0.314197f,0.5f),
+//			new Vector3(-0.00990032f,0.297795f,-0.5f),
+//			new Vector3(-0.00990032f,0.297795f,0.5f),
+//
+//		});
+//
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(0.00799953f,0.465615f,-0.5f),
+//			new Vector3(1f,0.792096f,0.5f),
+//			new Vector3(-0.360437f,1f,-0.5f),
+//			new Vector3(1f,1f,-0.5f),
+//			new Vector3(0.00799953f,0.465615f,0.5f),
+//			new Vector3(0.140247f,0.396627f,-0.5f),
+//			new Vector3(-0.360437f,1f,0.5f),
+//			new Vector3(1f,1f,0.5f),
+//			new Vector3(0.271967f,0.357577f,-0.5f),
+//			new Vector3(1f,0.792096f,-0.5f),
+//			new Vector3(0.271967f,0.357577f,0.5f),
+//			new Vector3(0.140247f,0.396627f,0.5f),
+//
+//		});
+
+
+//		vc.Add(new List<Vector3>(){
+//			new Vector3(-0.806506f,0.343989f,-0.5f),
+//			new Vector3(0.0101658f,0.420679f,0.5f),
+//			new Vector3(0.0101658f,0.420679f,-0.5f),
+//			new Vector3(-0.14343f,0.205019f,0.5f),
+//			new Vector3(-0.14343f,0.205019f,-0.5f),
+//			//new Vector3(-0.806506f,0.343989f,0f),
+//			new Vector3(-0.806506f,0.343989f,0.5f),
+//
+//		});
+
+
+
 		vc.Add(new List<Vector3>(){
-			new Vector3(-10f,-10f,-1f),
-			new Vector3(-7.94882f,-10f,-1f),
-			new Vector3(-10f,-3.31584f,-1f),
-			new Vector3(-5.98044f,-3.85547f,-1f),
-			new Vector3(-10f,-10f,1f),
-			new Vector3(-7.94882f,-10f,1f),
-			new Vector3(-10f,-3.31584f,1f),
-			new Vector3(-5.98044f,-3.85547f,1f),
+			new Vector3(-1f,-1f,-0.5f),
+			new Vector3(-0.0448597f,-0.598239f,-0.5f),
+			new Vector3(-1f,-0.362044f,-0.5f),
+			new Vector3(-0.385575f,-0.221627f,-0.5f),
+			new Vector3(-1f,-1f,0.5f),
+			new Vector3(-0.385575f,-0.221627f,0.5f),
+			new Vector3(-1f,-0.362044f,0.5f),
+			new Vector3(-0.103467f,-1f,-0.5f),
+			new Vector3(-0.18347f,-0.420897f,-0.5f),
+			new Vector3(-0.18347f,-0.420897f,0.5f),
+			new Vector3(-0.0448597f,-0.598239f,0.5f),
+			new Vector3(-0.103467f,-1f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(-7.94882f,-10f,-1f),
-			new Vector3(-3.3582f,-10f,-1f),
-			new Vector3(-4.29742f,-4.13704f,1f),
-			new Vector3(-4.29742f,-4.13704f,-1f),
-			new Vector3(-7.94882f,-10f,1f),
-			new Vector3(-3.3582f,-10f,1f),
-			new Vector3(-5.98044f,-3.85547f,1f),
-			new Vector3(-5.76286f,-3.76117f,1f),
-			new Vector3(-5.76286f,-3.76117f,-1f),
-			new Vector3(-5.98044f,-3.85547f,-1f),
+			new Vector3(-0.0448597f,-0.598239f,-0.5f),
+			new Vector3(1f,-1f,-0.5f),
+			new Vector3(-0.103467f,-1f,0.5f),
+			new Vector3(0.518295f,-0.459347f,-0.5f),
+			new Vector3(-0.103467f,-1f,-0.5f),
+			new Vector3(1f,-1f,0.5f),
+			new Vector3(0.0743321f,-0.34692f,-0.5f),
+			new Vector3(1f,-0.709246f,-0.5f),
+			new Vector3(0.518295f,-0.459347f,0.5f),
+			new Vector3(1f,-0.709246f,0.5f),
+			new Vector3(-0.0448597f,-0.598239f,0.5f),
+			new Vector3(0.0743321f,-0.34692f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(-3.3582f,-10f,-1f),
-			new Vector3(0.392432f,-10f,-1f),
-			new Vector3(-4.29742f,-4.13704f,1f),
-			new Vector3(0.392432f,-10f,1f),
-			new Vector3(-3.3582f,-10f,1f),
-			new Vector3(-3.89868f,-4.13711f,1f),
-			new Vector3(0.674601f,-8.62726f,-1f),
-			new Vector3(0.674601f,-8.62726f,1f),
-			new Vector3(-3.89868f,-4.13711f,-1f),
-			new Vector3(-4.29742f,-4.13704f,-1f),
+			new Vector3(0.0743321f,-0.34692f,0.5f),
+			new Vector3(0.518295f,-0.459347f,-0.5f),
+			new Vector3(0.222638f,-0.250217f,-0.5f),
+			new Vector3(0.356161f,-0.286853f,-0.5f),
+			new Vector3(0.079184f,-0.323635f,0.5f),
+			new Vector3(0.518295f,-0.459347f,0.5f),
+			new Vector3(0.222638f,-0.250217f,0.5f),
+			new Vector3(0.356161f,-0.286853f,0.5f),
+			new Vector3(0.079184f,-0.323635f,-0.5f),
+			new Vector3(0.0743321f,-0.34692f,-0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(5.09223f,-10f,-1f),
-			new Vector3(10f,-10f,-1f),
-			new Vector3(4.54339f,-6.7361f,-1f),
-			new Vector3(10f,-6.8623f,1f),
-			new Vector3(5.09223f,-10f,1f),
-			new Vector3(10f,-10f,1f),
-			new Vector3(4.54339f,-6.7361f,1f),
-			new Vector3(10f,-6.8623f,-1f),
-			new Vector3(7.65906f,-5.72942f,-1f),
-			new Vector3(7.65906f,-5.72942f,1f),
+			new Vector3(-0.385575f,-0.221627f,-0.5f),
+			new Vector3(-1f,0.144961f,0.5f),
+			new Vector3(-0.312959f,-0.137179f,-0.5f),
+			new Vector3(-0.684528f,0.136085f,0.5f),
+			new Vector3(-1f,-0.362044f,-0.5f),
+			new Vector3(-0.312959f,-0.137179f,0.5f),
+			new Vector3(-0.684528f,0.136085f,-0.5f),
+			new Vector3(-1f,0.144961f,-0.5f),
+			new Vector3(-0.385575f,-0.221627f,0.5f),
+			new Vector3(-1f,-0.362044f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(0.392432f,-10f,1f),
-			new Vector3(5.09223f,-10f,-1f),
-			new Vector3(4.54339f,-6.7361f,1f),
-			new Vector3(4.54339f,-6.7361f,-1f),
-			new Vector3(0.392432f,-10f,-1f),
-			new Vector3(5.09223f,-10f,1f),
-			new Vector3(3.79361f,-6.58422f,-1f),
-			new Vector3(3.79361f,-6.58422f,1f),
-			new Vector3(0.674601f,-8.62726f,1f),
-			new Vector3(0.674601f,-8.62726f,-1f),
+			new Vector3(-0.684528f,0.136085f,-0.5f),
+			new Vector3(-0.312959f,-0.137179f,0.5f),
+			new Vector3(-0.283868f,0.0376008f,0.5f),
+			new Vector3(-0.312959f,-0.137179f,-0.5f),
+			new Vector3(-0.343069f,0.143474f,0.5f),
+			new Vector3(-0.312229f,-0.136512f,0.5f),
+			new Vector3(-0.684528f,0.136085f,0.5f),
+			new Vector3(-0.312229f,-0.136512f,-0.5f),
+			new Vector3(-0.283868f,0.0376008f,-0.5f),
+			new Vector3(-0.343069f,0.143474f,-0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(0.674601f,-8.62726f,-1f),
-			new Vector3(3.79361f,-6.58422f,-1f),
-			new Vector3(1.13447f,-1.63668f,1f),
-			new Vector3(-3.89868f,-4.13711f,1f),
-			new Vector3(0.674601f,-8.62726f,1f),
-			new Vector3(3.79361f,-6.58422f,1f),
-			new Vector3(1.13447f,-1.63668f,-1f),
-			new Vector3(-3.89868f,-4.13711f,-1f),
+			new Vector3(-0.312229f,-0.136512f,0.5f),
+			new Vector3(-0.385575f,-0.221627f,-0.5f),
+			new Vector3(-0.312229f,-0.136512f,-0.5f),
+			new Vector3(-0.216008f,-0.160551f,-0.5f),
+			new Vector3(-0.18347f,-0.420897f,0.5f),
+			new Vector3(-0.18347f,-0.420897f,-0.5f),
+			new Vector3(-0.312959f,-0.137179f,-0.5f),
+			new Vector3(-0.216008f,-0.160551f,0.5f),
+			new Vector3(-0.312959f,-0.137179f,0.5f),
+			new Vector3(-0.385575f,-0.221627f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(4.54339f,-6.7361f,1f),
-			new Vector3(7.65906f,-5.72942f,-1f),
-			new Vector3(1.13447f,-1.63668f,1f),
-			new Vector3(7.1848f,-2.47067f,-1f),
-			new Vector3(3.79361f,-6.58422f,1f),
-			new Vector3(7.65906f,-5.72942f,1f),
-			new Vector3(1.13447f,-1.63668f,-1f),
-			new Vector3(7.1848f,-2.47067f,1f),
-			new Vector3(3.79361f,-6.58422f,-1f),
-			new Vector3(4.54339f,-6.7361f,-1f),
-			new Vector3(1.17045f,-1.57031f,1f),
-			new Vector3(1.17045f,-1.57031f,-1f),
+			new Vector3(-0.312229f,-0.136512f,-0.5f),
+			new Vector3(-0.216008f,-0.160551f,-0.5f),
+			new Vector3(0.0139972f,-0.15204f,-0.5f),
+			new Vector3(0.0153618f,-0.0473141f,-0.5f),
+			new Vector3(-0.312229f,-0.136512f,0.5f),
+			new Vector3(-0.216008f,-0.160551f,0.5f),
+			new Vector3(-0.283868f,0.0376008f,-0.5f),
+			new Vector3(-0.283868f,0.0376008f,0.5f),
+			new Vector3(-0.0237972f,-0.020674f,-0.5f),
+			new Vector3(-0.0237972f,-0.020674f,0.5f),
+			new Vector3(0.0153618f,-0.0473141f,0.5f),
+			new Vector3(0.0139972f,-0.15204f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(1.17045f,-1.57031f,-1f),
-			new Vector3(7.38704f,-1.96041f,1f),
-			new Vector3(1.62592f,1.21872f,1f),
-			new Vector3(1.17045f,-1.57031f,1f),
-			new Vector3(4.19136f,2.27818f,1f),
-			new Vector3(7.1848f,-2.47067f,1f),
-			new Vector3(1.62592f,1.21872f,-1f),
-			new Vector3(4.19136f,2.27818f,-1f),
-			new Vector3(7.1848f,-2.47067f,-1f),
-			new Vector3(7.38704f,-1.96041f,-1f),
+			new Vector3(-0.0448597f,-0.598239f,0.5f),
+			new Vector3(0.079184f,-0.323635f,-0.5f),
+			new Vector3(-0.216008f,-0.160551f,-0.5f),
+			new Vector3(0.0139972f,-0.15204f,-0.5f),
+			new Vector3(-0.18347f,-0.420897f,0.5f),
+			new Vector3(0.0743321f,-0.34692f,-0.5f),
+			new Vector3(-0.216008f,-0.160551f,0.5f),
+			new Vector3(0.0139972f,-0.15204f,0.5f),
+			new Vector3(-0.18347f,-0.420897f,-0.5f),
+			new Vector3(-0.0448597f,-0.598239f,-0.5f),
+			new Vector3(0.079184f,-0.323635f,0.5f),
+			new Vector3(0.0743321f,-0.34692f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(7.1848f,-2.47067f,-1f),
-			new Vector3(10f,-6.8623f,-1f),
-			new Vector3(10f,0.382188f,-1f),
-			new Vector3(10f,0.382188f,1f),
-			new Vector3(7.38704f,-1.96041f,1f),
-			new Vector3(10f,-6.8623f,1f),
-			new Vector3(7.38704f,-1.96041f,-1f),
-			new Vector3(7.65906f,-5.72942f,-1f),
-			new Vector3(7.65906f,-5.72942f,1f),
-			new Vector3(7.1848f,-2.47067f,1f),
+			new Vector3(0.335603f,-0.119844f,-0.5f),
+			new Vector3(0.0139972f,-0.15204f,-0.5f),
+			new Vector3(0.079184f,-0.323635f,0.5f),
+			new Vector3(0.307884f,0.0428469f,-0.5f),
+			new Vector3(0.222638f,-0.250217f,0.5f),
+			new Vector3(0.0139972f,-0.15204f,0.5f),
+			new Vector3(0.335603f,-0.119844f,0.5f),
+			new Vector3(0.307884f,0.0428469f,0.5f),
+			new Vector3(0.0277375f,-0.0346146f,-0.5f),
+			new Vector3(0.0153618f,-0.0473141f,-0.5f),
+			new Vector3(0.079184f,-0.323635f,-0.5f),
+			new Vector3(0.222638f,-0.250217f,-0.5f),
+			new Vector3(0.0153618f,-0.0473141f,0.5f),
+			new Vector3(0.0277375f,-0.0346146f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(-10f,-3.31584f,-1f),
-			new Vector3(-5.76286f,-3.76117f,1f),
-			new Vector3(-10f,2.04241f,1f),
-			new Vector3(-5.61674f,0.928311f,-1f),
-			new Vector3(-10f,-3.31584f,1f),
-			new Vector3(-5.98044f,-3.85547f,1f),
-			new Vector3(-9.30719f,2.07222f,1f),
-			new Vector3(-5.61674f,0.928311f,1f),
-			new Vector3(-9.30719f,2.07222f,-1f),
-			new Vector3(-10f,2.04241f,-1f),
-			new Vector3(-5.98044f,-3.85547f,-1f),
-			new Vector3(-5.76286f,-3.76117f,-1f),
+			new Vector3(0.335603f,-0.119844f,0.5f),
+			new Vector3(1f,-0.206532f,-0.5f),
+			new Vector3(0.307884f,0.0428469f,-0.5f),
+			new Vector3(1f,1f,-0.5f),
+			new Vector3(0.335603f,-0.119844f,-0.5f),
+			new Vector3(1f,-0.206532f,0.5f),
+			new Vector3(0.683389f,0.692466f,0.5f),
+			new Vector3(1f,1f,0.5f),
+			new Vector3(0.544173f,-0.176223f,-0.5f),
+			new Vector3(0.544173f,-0.176223f,0.5f),
+			new Vector3(0.307884f,0.0428469f,0.5f),
+			new Vector3(0.906816f,1f,0.5f),
+			new Vector3(0.906816f,1f,-0.5f),
+			new Vector3(0.683389f,0.692466f,-0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(-9.30719f,2.07222f,-1f),
-			new Vector3(-5.61674f,0.928311f,-1f),
-			new Vector3(-5.66215f,8.63591f,1f),
-			new Vector3(-4.8279f,2.63814f,-1f),
-			new Vector3(-9.30719f,2.07222f,1f),
-			new Vector3(-5.61674f,0.928311f,1f),
-			new Vector3(-4.91934f,3.5441f,1f),
-			new Vector3(-4.8279f,2.63814f,1f),
-			new Vector3(-4.91934f,3.5441f,-1f),
-			new Vector3(-5.66215f,8.63591f,-1f),
+			new Vector3(0.356161f,-0.286853f,-0.5f),
+			new Vector3(1f,-0.709246f,0.5f),
+			new Vector3(0.544173f,-0.176223f,-0.5f),
+			new Vector3(1f,-0.206532f,-0.5f),
+			new Vector3(0.356161f,-0.286853f,0.5f),
+			new Vector3(0.518295f,-0.459347f,0.5f),
+			new Vector3(0.544173f,-0.176223f,0.5f),
+			new Vector3(1f,-0.206532f,0.5f),
+			new Vector3(0.518295f,-0.459347f,-0.5f),
+			new Vector3(1f,-0.709246f,-0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(-3.89868f,-4.13711f,1f),
-			new Vector3(-5.61674f,0.928311f,-1f),
-			new Vector3(-5.76286f,-3.76117f,-1f),
-			new Vector3(1.49754f,1.35368f,-1f),
-			new Vector3(1.17045f,-1.57031f,-1f),
-			new Vector3(1.13447f,-1.63668f,-1f),
-			new Vector3(-4.8279f,2.63814f,-1f),
-			new Vector3(1.49754f,1.35368f,1f),
-			new Vector3(-5.61674f,0.928311f,1f),
-			new Vector3(-4.8279f,2.63814f,1f),
-			new Vector3(1.62592f,1.21872f,-1f),
-			new Vector3(1.62592f,1.21872f,1f),
-			new Vector3(-4.29742f,-4.13704f,-1f),
-			new Vector3(-3.89868f,-4.13711f,-1f),
-			new Vector3(-4.29742f,-4.13704f,1f),
-			new Vector3(-5.76286f,-3.76117f,1f),
-			new Vector3(1.17045f,-1.57031f,1f),
-			new Vector3(1.13447f,-1.63668f,1f),
+			new Vector3(0.335603f,-0.119844f,-0.5f),
+			new Vector3(0.222638f,-0.250217f,-0.5f),
+			new Vector3(0.335603f,-0.119844f,0.5f),
+			new Vector3(0.544173f,-0.176223f,-0.5f),
+			new Vector3(0.356161f,-0.286853f,-0.5f),
+			new Vector3(0.544173f,-0.176223f,0.5f),
+			new Vector3(0.356161f,-0.286853f,0.5f),
+			new Vector3(0.222638f,-0.250217f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(5.46549f,3.46373f,1f),
-			new Vector3(10f,0.382188f,1f),
-			new Vector3(5.46549f,3.46373f,-1f),
-			new Vector3(10f,2.22725f,-1f),
-			new Vector3(10f,0.382188f,-1f),
-			new Vector3(7.38704f,-1.96041f,-1f),
-			new Vector3(7.38704f,-1.96041f,1f),
-			new Vector3(10f,2.22725f,1f),
-			new Vector3(4.19136f,2.27818f,-1f),
-			new Vector3(4.19136f,2.27818f,1f),
+			new Vector3(-1f,0.144961f,0.5f),
+			new Vector3(-0.300478f,0.206166f,0.5f),
+			new Vector3(-1f,1f,-0.5f),
+			new Vector3(-0.738741f,1f,-0.5f),
+			new Vector3(-1f,0.144961f,-0.5f),
+			new Vector3(-0.332252f,0.156636f,-0.5f),
+			new Vector3(-1f,1f,0.5f),
+			new Vector3(-0.738741f,1f,0.5f),
+			new Vector3(-0.302425f,0.202496f,-0.5f),
+			new Vector3(-0.300478f,0.206166f,-0.5f),
+			new Vector3(-0.302425f,0.202496f,0.5f),
+			new Vector3(-0.332252f,0.156636f,0.5f),
+			new Vector3(-0.343069f,0.143474f,0.5f),
+			new Vector3(-0.343069f,0.143474f,-0.5f),
+			new Vector3(-0.684528f,0.136085f,0.5f),
+			new Vector3(-0.684528f,0.136085f,-0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(-10f,2.04241f,-1f),
-			new Vector3(-9.30719f,2.07222f,-1f),
-			new Vector3(-10f,10f,-1f),
-			new Vector3(-5.7447f,10f,1f),
-			new Vector3(-10f,2.04241f,1f),
-			new Vector3(-9.30719f,2.07222f,1f),
-			new Vector3(-10f,10f,1f),
-			new Vector3(-5.66215f,8.63591f,1f),
-			new Vector3(-5.66215f,8.63591f,-1f),
-			new Vector3(-5.7447f,10f,-1f),
+			new Vector3(-0.283868f,0.0376008f,0.5f),
+			new Vector3(-0.0237972f,-0.020674f,-0.5f),
+			new Vector3(-0.332252f,0.156636f,-0.5f),
+			new Vector3(-0.0815209f,0.114455f,-0.5f),
+			new Vector3(-0.343069f,0.143474f,0.5f),
+			new Vector3(-0.0237972f,-0.020674f,0.5f),
+			new Vector3(-0.332252f,0.156636f,0.5f),
+			new Vector3(-0.0815209f,0.114455f,0.5f),
+			new Vector3(-0.343069f,0.143474f,-0.5f),
+			new Vector3(-0.283868f,0.0376008f,-0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(0.604238f,4.11363f,1f),
-			new Vector3(-4.8279f,2.63814f,1f),
-			new Vector3(-4.8279f,2.63814f,-1f),
-			new Vector3(0.604238f,4.11363f,-1f),
-			new Vector3(1.49754f,1.35368f,1f),
-			new Vector3(1.49754f,1.35368f,-1f),
-			new Vector3(-4.91934f,3.5441f,1f),
-			new Vector3(-4.91934f,3.5441f,-1f),
+			new Vector3(-0.0986741f,0.419068f,0.5f),
+			new Vector3(-0.0840575f,0.147685f,-0.5f),
+			new Vector3(-0.0986741f,0.419068f,-0.5f),
+			new Vector3(-0.0585627f,0.273246f,-0.5f),
+			new Vector3(-0.302425f,0.202496f,-0.5f),
+			new Vector3(-0.0840575f,0.147685f,0.5f),
+			new Vector3(-0.302425f,0.202496f,0.5f),
+			new Vector3(-0.0585627f,0.273246f,0.5f),
+			new Vector3(-0.300478f,0.206166f,-0.5f),
+			new Vector3(-0.300478f,0.206166f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(-4.91934f,3.5441f,-1f),
-			new Vector3(0.604238f,4.11363f,-1f),
-			new Vector3(0.0411408f,6.32277f,1f),
-			new Vector3(-4.83227f,10f,1f),
-			new Vector3(-5.66215f,8.63591f,-1f),
-			new Vector3(0.604238f,4.11363f,1f),
-			new Vector3(-5.7447f,10f,1f),
-			new Vector3(-4.83227f,10f,-1f),
-			new Vector3(0.0411408f,6.32277f,-1f),
-			new Vector3(-5.7447f,10f,-1f),
-			new Vector3(-4.91934f,3.5441f,1f),
-			new Vector3(-5.66215f,8.63591f,1f),
+			new Vector3(-0.0840575f,0.147685f,0.5f),
+			new Vector3(-0.0840575f,0.147685f,-0.5f),
+			new Vector3(-0.0585627f,0.273246f,0.5f),
+			new Vector3(0.0277375f,-0.0346146f,0.5f),
+			new Vector3(-0.0237972f,-0.020674f,-0.5f),
+			new Vector3(0.0675767f,0.128497f,0.5f),
+			new Vector3(-0.0585627f,0.273246f,-0.5f),
+			new Vector3(0.0675767f,0.128497f,-0.5f),
+			new Vector3(-0.0815209f,0.114455f,0.5f),
+			new Vector3(-0.0815209f,0.114455f,-0.5f),
+			new Vector3(0.0153618f,-0.0473141f,0.5f),
+			new Vector3(-0.0237972f,-0.020674f,0.5f),
+			new Vector3(0.0153618f,-0.0473141f,-0.5f),
+			new Vector3(0.0277375f,-0.0346146f,-0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(1.49754f,1.35368f,-1f),
-			new Vector3(5.46549f,3.46373f,1f),
-			new Vector3(0.604238f,4.11363f,-1f),
-			new Vector3(5.40612f,6.31257f,1f),
-			new Vector3(1.49754f,1.35368f,1f),
-			new Vector3(1.62592f,1.21872f,-1f),
-			new Vector3(0.0411408f,6.32277f,-1f),
-			new Vector3(5.40612f,6.31257f,-1f),
-			new Vector3(2.76031f,7.005f,-1f),
-			new Vector3(2.76031f,7.005f,1f),
-			new Vector3(0.604238f,4.11363f,1f),
-			new Vector3(0.0411408f,6.32277f,1f),
-			new Vector3(4.19136f,2.27818f,-1f),
-			new Vector3(5.46549f,3.46373f,-1f),
-			new Vector3(4.19136f,2.27818f,1f),
-			new Vector3(1.62592f,1.21872f,1f),
+			new Vector3(-0.332252f,0.156636f,-0.5f),
+			new Vector3(-0.302425f,0.202496f,-0.5f),
+			new Vector3(-0.0815209f,0.114455f,0.5f),
+			new Vector3(-0.302425f,0.202496f,0.5f),
+			new Vector3(-0.332252f,0.156636f,0.5f),
+			new Vector3(-0.0815209f,0.114455f,-0.5f),
+			new Vector3(-0.0840575f,0.147685f,-0.5f),
+			new Vector3(-0.0840575f,0.147685f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(5.46549f,3.46373f,1f),
-			new Vector3(10f,2.22725f,-1f),
-			new Vector3(8.15934f,10f,-1f),
-			new Vector3(10f,10f,-1f),
-			new Vector3(5.40612f,6.31257f,1f),
-			new Vector3(10f,2.22725f,1f),
-			new Vector3(8.15934f,10f,1f),
-			new Vector3(10f,10f,1f),
-			new Vector3(5.40612f,6.31257f,-1f),
-			new Vector3(5.46549f,3.46373f,-1f),
+			new Vector3(0.683389f,0.692466f,0.5f),
+			new Vector3(0.0277375f,-0.0346146f,-0.5f),
+			new Vector3(0.0675767f,0.128497f,-0.5f),
+			new Vector3(0.683389f,0.692466f,-0.5f),
+			new Vector3(0.307884f,0.0428469f,0.5f),
+			new Vector3(0.307884f,0.0428469f,-0.5f),
+			new Vector3(0.0277375f,-0.0346146f,0.5f),
+			new Vector3(0.0675767f,0.128497f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(0.0411408f,6.32277f,-1f),
-			new Vector3(2.76031f,7.005f,-1f),
-			new Vector3(-4.83227f,10f,-1f),
-			new Vector3(2.61917f,10f,-1f),
-			new Vector3(0.0411408f,6.32277f,1f),
-			new Vector3(2.76031f,7.005f,1f),
-			new Vector3(-4.83227f,10f,1f),
-			new Vector3(2.61917f,10f,1f),
+			new Vector3(0.0675767f,0.128497f,-0.5f),
+			new Vector3(0.683389f,0.692466f,-0.5f),
+			new Vector3(-0.0585627f,0.273246f,0.5f),
+			new Vector3(0.906816f,1f,-0.5f),
+			new Vector3(0.0675767f,0.128497f,0.5f),
+			new Vector3(0.683389f,0.692466f,0.5f),
+			new Vector3(0.114596f,1f,-0.5f),
+			new Vector3(0.906816f,1f,0.5f),
+			new Vector3(-0.0986741f,0.419068f,-0.5f),
+			new Vector3(-0.0585627f,0.273246f,-0.5f),
+			new Vector3(-0.0986741f,0.419068f,0.5f),
+			new Vector3(0.114596f,1f,0.5f),
 
 		});
 
-		//ALL VC POINTS:
-
 		vc.Add(new List<Vector3>(){
-			new Vector3(2.76031f,7.005f,-1f),
-			new Vector3(5.40612f,6.31257f,-1f),
-			new Vector3(2.61917f,10f,-1f),
-			new Vector3(8.15934f,10f,-1f),
-			new Vector3(2.76031f,7.005f,1f),
-			new Vector3(5.40612f,6.31257f,1f),
-			new Vector3(2.61917f,10f,1f),
-			new Vector3(8.15934f,10f,1f),
+			new Vector3(-0.738741f,1f,0.5f),
+			new Vector3(0.114596f,1f,-0.5f),
+			new Vector3(-0.738741f,1f,-0.5f),
+			new Vector3(-0.300478f,0.206166f,-0.5f),
+			new Vector3(-0.300478f,0.206166f,0.5f),
+			new Vector3(-0.0986741f,0.419068f,-0.5f),
+			new Vector3(0.114596f,1f,0.5f),
+			new Vector3(-0.0986741f,0.419068f,0.5f),
 
 		});
+
 
 
 
@@ -391,8 +1017,18 @@ public class CreateGround : MonoBehaviour {
 			}	//new Color (UnityEngine.Random.Range (0.0f, 1.0f), 
 //							UnityEngine.Random.Range (0.0f, 1.0f), 
 //							UnityEngine.Random.Range (0.0f, 1.0f));
-			foreach (var v in randomVerts) {
-			
+			//add a random control point in the center?
+//
+//			vv.Add( Vector3.Scale( Vector3.Normalize (new Vector3 (randomVerts [1].x, randomVerts [1].y, randomVerts [1].z)
+//				- new Vector3 (randomVerts [0].x, randomVerts [0].y, randomVerts [0].z)), new Vector3(0.1f,0.1f,0.1f)) 
+//				+ new Vector3 (randomVerts [0].x, randomVerts [0].y, randomVerts [0].z));
+
+			//control point seems to have to be in z-depth?
+
+			//vv.Add(new Vector3(randomVerts[1].x, randomVerts[1].y, 0f);
+			Debug.Log(String.Format("{0} - {1} - {2}", cc, vv.Count(), randomVerts.Count));
+			foreach (var v in vv) {
+				
 				var location = new double[dimension];
 				location [0] = v.x;
 				location [1] = v.y;
@@ -412,15 +1048,28 @@ public class CreateGround : MonoBehaviour {
 //		}
 
 			voronoi = VoronoiMesh.Create (vertices);
-			var delaunay = Triangulation.CreateDelaunay<Vertex> (vertices);
+			//var delaunay = Triangulation.CreateDelaunay<Vertex> (vertices);
+			//var c = Triangulation.CreateDelaunay<Vertex, Tetrahedron>(vertices).Cells;
+			//verticesList = new List<Vector3> ();
+			//lines = new List<Vector3[]> ();
 
-			verticesList = new List<Vector3> ();
-			lines = new List<Vector3[]> ();
 
-			foreach (var e in voronoi.Vertices) {
-				//CreateTriangles (e);
-				CreateTetrahedron (cc, e,color);
+			var convexHull = ConvexHull.Create<Vertex>(vertices);
+			foreach (var f in convexHull.Faces) {
+				
+				_CreateTriangle(f.ToString (), new Vector3[]{ 
+					_CreateVector3FromPosition(f.Vertices[0]),
+					_CreateVector3FromPosition(f.Vertices[1]),
+					_CreateVector3FromPosition(f.Vertices[2])
+				});
+
+
 			}
+
+//			foreach (var e in voronoi.Vertices) {
+//				//CreateTriangles (e);
+//				CreateTetrahedron (cc, e,color);
+//			}
 		}
 //		foreach (var e in voronoi.Edges) {
 //			var l = e;
@@ -439,6 +1088,31 @@ public class CreateGround : MonoBehaviour {
 //		var component = GetComponent<MeshFilter> ().mesh;
 	}
 
+	Vector3 _CreateVector3FromPosition(Vertex p){
+		return new Vector3 ((float)p.Position [0], (float)p.Position [1], (float)p.Position [2]);
+	}
+
+	static void _CreateTriangle(String e, Vector3[] vertices){
+						var go = new GameObject();
+						go.AddComponent<MeshFilter> ();
+						go.AddComponent<MeshRenderer> ();
+						Mesh mesh = new Mesh ();
+						go.GetComponent<MeshFilter> ().mesh = mesh;
+						mesh.vertices = vertices;
+						
+						//			foreach (Vertex sv in e.Source.Vertices) {
+						//				
+						//				mesh.vertices =  new Vector3[] {new Vector3(sv.Position[0], 0, 0), new Vector3(0, 1, 0), new Vector3(1, 1, 0)};
+						//			
+						//			}
+						mesh.uv = new Vector2[] {new Vector2(0, 0), new Vector2(0, 1), new Vector2(1, 1)};
+						mesh.triangles = new int[] { 0, 1, 2 };
+
+						mesh.RecalculateNormals();
+						mesh.RecalculateBounds();
+						go.GetComponent<Renderer> ().material.color = Color.green;
+	}
+
 	void findAdjacentVertices(){
 		//voronoi.Edges.Select(x=>x.
 	}
@@ -452,7 +1126,6 @@ public class CreateGround : MonoBehaviour {
 			new Vector3 ((float)e.Vertices [1].Position[0], (float)e.Vertices [1].Position [1], 0f),
 			new Vector3 ((float)e.Vertices [2].Position[0], (float)e.Vertices [2].Position [1],0f)
 		};
-		verticesList.Add(new Vector3 ((float)e.Vertices[0].Position[0], (float)e.Vertices[0].Position [1],  0f));
 
 		//			foreach (Vertex sv in e.Source.Vertices) {
 		//				
@@ -460,7 +1133,8 @@ public class CreateGround : MonoBehaviour {
 		//			
 		//			}
 		mesh.uv = new Vector2[] {new Vector2(0, 0), new Vector2(0, 1), new Vector2(1, 1)};
-		mesh.triangles = new int[] {0, 1, 2};
+		mesh.triangles = new int[] { 0, 1, 2 };
+
 		mesh.RecalculateNormals();
 		mesh.RecalculateBounds();
 		go.GetComponent<Renderer> ().material.color = Color.blue;
@@ -469,7 +1143,15 @@ public class CreateGround : MonoBehaviour {
 //			UnityEngine.Random.Range (0.0f, 1.0f));
 //		
 	}
+
+	static Vector3 SurfaceNormalForTriangle(Vector3 v1, Vector3 v2, Vector3 v3){
+		Vector3 a = v2 - v1;
+		Vector3 b = v3 - v1;
+		return Vector3.Cross (a, b);
+
+	}
 	void CreateTetrahedron(int cc,DefaultTriangulationCell<Vertex> e, Color color){
+		//Debug.Log (e.Vertices.Count());
 		var p0 = new Vector3 ((float)e.Vertices [0].Position [0], (float)e.Vertices [0].Position [1], (float)e.Vertices [0].Position [2]);
 		var p1 =new Vector3 ((float)e.Vertices [1].Position[0], (float)e.Vertices [1].Position [1],(float)e.Vertices [1].Position [2]);
 		var p2 =new Vector3 ((float)e.Vertices [2].Position[0], (float)e.Vertices [2].Position [1],(float)e.Vertices [2].Position [2]);
@@ -486,10 +1168,10 @@ public class CreateGround : MonoBehaviour {
 			p0,p3,p1
 		};
 		mesh.triangles = new int[]{
-			0,1,2,
-			3,4,5,
-			6,7,8,
-			9,10,11
+			2,1,0,
+			5,4,3,
+			8,7,6,
+			11,10,9
 		};
 		Vector2[] uvs = new Vector2[mesh.vertices.Length];
 
