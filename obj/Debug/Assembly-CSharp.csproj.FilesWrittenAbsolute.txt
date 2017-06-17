@@ -1,7 +1,3 @@
-/Users/amitshah/unity/court-smash/Temp/bin/Debug/Assembly-CSharp.dll.mdb
-/Users/amitshah/unity/court-smash/Temp/bin/Debug/Assembly-CSharp.dll
-/Users/amitshah/unity/court-smash/obj/Debug/Assembly-CSharp.dll
-/Users/amitshah/unity/court-smash/obj/Debug/Assembly-CSharp.dll.mdb
 /Users/amitshah/unity/court-smash/Temp/bin/Debug/UnityEngine.dll
 /Users/amitshah/unity/court-smash/Temp/bin/Debug/UnityEditor.dll
 /Users/amitshah/unity/court-smash/Temp/bin/Debug/UnityEngine.UI.dll
@@ -22,3 +18,7 @@
 /Users/amitshah/unity/court-smash/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/amitshah/unity/court-smash/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/amitshah/unity/court-smash/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/amitshah/unity/court-smash/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/amitshah/unity/court-smash/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/amitshah/unity/court-smash/obj/Debug/Assembly-CSharp.dll
+/Users/amitshah/unity/court-smash/obj/Debug/Assembly-CSharp.dll.mdb

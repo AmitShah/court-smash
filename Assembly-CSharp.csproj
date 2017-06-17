@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_PHYSICS_EDGE_RADIUS;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_VR;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_0;UNITY_5_6;UNITY_5;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_PHYSICS_EDGE_RADIUS;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;ENABLE_CUSTOM_RENDER_TEXTURE;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_VR;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -80,6 +80,32 @@
      <Compile Include="Assets\Network\Mqtt\Utility\QueueExtension.cs" />
      <Compile Include="Assets\Network\Mqtt\Utility\Trace.cs" />
      <Compile Include="Assets\Network\MqttNetworkManager.cs" />
+     <Compile Include="Assets\Scripts\CreateGround.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\Configuration.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull\Algorithm\Core.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull\Algorithm\Data.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull\Algorithm\Initialize.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull\Algorithm\Result.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull\Collections.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull\ConvexFace.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull\DataModel.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull\MathHelper.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\ConvexHull\ObjectManager.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\IVertex.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\Triangulation.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\Triangulation\DelaunayTrianglationInternal.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\Triangulation\DelaunayTriangulation.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\Triangulation\TriangulationCell.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\Triangulation\VoronoiEdge.cs" />
+     <Compile Include="Assets\Scripts\MIConvexHull\Triangulation\VoronoiMesh.cs" />
+     <Compile Include="Assets\Scripts\Math3d.cs" />
+     <Compile Include="Assets\Scripts\TestGrid.cs" />
+     <Compile Include="Assets\Scripts\Triangulator.cs" />
+     <Compile Include="Assets\Scripts\Voronoi.cs" />
+     <Compile Include="Assets\Scripts\tetrahedron.cs" />
+     <Compile Include="Assets\Scripts\vertex.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
