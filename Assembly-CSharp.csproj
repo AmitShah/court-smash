@@ -101,6 +101,7 @@
      <Compile Include="Assets\Scripts\MIConvexHull\Triangulation\VoronoiEdge.cs" />
      <Compile Include="Assets\Scripts\MIConvexHull\Triangulation\VoronoiMesh.cs" />
      <Compile Include="Assets\Scripts\Math3d.cs" />
+     <Compile Include="Assets\Scripts\Terrain\BaseCube.cs" />
      <Compile Include="Assets\Scripts\TestGrid.cs" />
      <Compile Include="Assets\Scripts\Triangulator.cs" />
      <Compile Include="Assets\Scripts\Voronoi.cs" />

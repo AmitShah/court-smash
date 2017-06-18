@@ -9,6 +9,7 @@ public class Voronoi : MonoBehaviour {
 
 	//https://stackoverflow.com/questions/17634480/return-c-array-to-c-sharp
 	//since we allocate the voronoi vertices in C++ we need to deallocate in the plugin
+	public Material material;
 
 	[DllImport ("voronoi-gen")]
 	private static extern int val();
@@ -30,7 +31,7 @@ public class Voronoi : MonoBehaviour {
 		
 	}
 	const float mean = 0f;
-	const float stdDev = 0.15f;
+	const float stdDev = 0.25f;
 	static float randomGenerator(){
 		
 		 //reuse this if you are generating many
@@ -46,20 +47,17 @@ public class Voronoi : MonoBehaviour {
 
 
 
-	unsafe static   void run()
+	unsafe void run()
 	{
-		const int NumberOfVertices = 10;
-		const float size = 20;
+		
 		const int dimension = 3;
-
-		IntPtr items;
 		int count =0;
-
 		IntPtr cellPtr = IntPtr.Zero;
 		int cellCount;
-		Vector3[] randomeVerts = new Vector3[15];
-		for(int k =0; k < 15; k++){
-			randomeVerts[k] = new Vector3(.8f+randomGenerator(),.8f+randomGenerator(),0.2f); 
+		Vector3[] randomeVerts = new Vector3[35];
+		for(int k =0; k < 35; k++){
+			randomeVerts[k] = new Vector3(randomGenerator(),randomGenerator(),
+				0f); 
 		}
 		//these random points will be managed by us, the result will be within the plugin
 		//Vector3[] verts = new Vector3[]{new Vector3(1.0f,1.0f,1.0f),new Vector3(2.5f,1.0f,1.0f),new Vector3(3.0f,1.0f,1.0f)};
@@ -93,19 +91,12 @@ public class Voronoi : MonoBehaviour {
 
 
 		var cc = 0;
-		VoronoiMesh<Vertex,DefaultTriangulationCell<Vertex>,VoronoiEdge<Vertex, DefaultTriangulationCell<Vertex>>> voronoi;
 
 		foreach (var vv in vc) {
 			cc++;
 			var randomVerts = vv;
 			var vertices = new List<Vertex> ();
-			var color = new Color (139.0f/255f, 244f/255f, 23f/255f,1);
-			if (cc % 2 == 0) {
-				color = new Color (255f/255f, 0, 240f/255f);
-			}
-			if (cc % 3 == 0) {
-				color = new Color (0f/255f, 255f/255f, 252f/255f);
-			}	
+				
 
 //			//BUG AMIT: add a random control point in for triangulation?
 //			vv.Add(new Vector3(randomVerts[0].x, randomVerts[0].y, 0f));
@@ -119,50 +110,80 @@ public class Voronoi : MonoBehaviour {
 				location [2] = v.z;
 				vertices.Add (new Vertex (location));
 			}
-//
-//
 
-//			voronoi = VoronoiMesh.Create (vertices);
-//			//Todo:consider this
-//			//https://github.com/gusmanb/MIConvexHull/blob/master/Examples/7DelaunayWPF/Tetrahedron.cs
-//			//var delaunay = Triangulation.CreateDelaunay<Vertex> (vertices);
-//			var parent =  new GameObject(cc.ToString());
+//			var parent =  
+//			GameObject.CreatePrimitive(PrimitiveType.Cube);
+//			parent.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+//			parent.name = cc.ToString();
+//			parent.GetComponent<MeshRenderer>().enabled = false;
+//			parent.AddComponent<Rigidbody>().useGravity = true;
+//			parent.GetComponent<Rigidbody>().AddExplosionForce(0.1f, Vector3.up,0.1f);
+
+			var convexHull = ConvexHull.Create<Vertex>(vertices,new ConvexHullComputationConfig
+				{
+					PlaneDistanceTolerance = 0.00000001f,
+
+				});
+			
+
+			_CreatePiece(convexHull,Resources.Load("BlockMaterial", typeof(Material)) as Material);
+//			foreach (var f in convexHull.Faces) {
+//				//Normal are populated for us
+//				//Debug.Log(String.Format("{0}, {1}, {2}, {3}", cc, f.Normal[0], f.Normal[1], f.Normal[2]));
+//				//f.Normal = Vector3.Normalize(Vector3.Cross(f.Vertices[1] - f.Vertices[0], f.Vertices[2] - f.Vertices[0]));
+//				_CreateTriangle(cc,f.ToString (), new Vector3[]{ 
+//					_CreateVector3FromPosition(f.Vertices[0]),
+//					_CreateVector3FromPosition(f.Vertices[1]),
+//					_CreateVector3FromPosition(f.Vertices[2])
+//				}, Resources.Load("BlockMaterial", typeof(Material)) as Material);
 //
-//			foreach (var e in  voronoi.Vertices) {
-//				
-//				//CreateTriangles (cc,e,color);
-//				//Debug.Log(String.Format("{0} - [{1} ]",cc, );
 //
-//				CreateTetrahedron (cc, e,color);
 //			}
-			var parent =  new GameObject(cc.ToString());
-			var convexHull = ConvexHull.Create<Vertex>(vertices);
-			foreach (var f in convexHull.Faces) {
-
-				_CreateTriangle(cc,f.ToString (), new Vector3[]{ 
-					_CreateVector3FromPosition(f.Vertices[0]),
-					_CreateVector3FromPosition(f.Vertices[1]),
-					_CreateVector3FromPosition(f.Vertices[2])
-				}, color);
-
-
-			}
 		}
 
 	}
 
+	static void _CreatePiece(ConvexHull<Vertex,DefaultConvexFace<Vertex>> ch, Material mat){
+		var go = new GameObject();
+		go.AddComponent<MeshFilter> ();
+		go.AddComponent<MeshRenderer> ();
+		go.AddComponent<Rigidbody> ().useGravity = true;
+		Mesh mesh = new Mesh ();
+		go.GetComponent<MeshFilter> ().mesh = mesh;
+		//var count = 0;
+		var vertices = new List<Vector3> ();
+		var uv = new List<Vector2> ();
+		foreach (var f in ch.Faces) {
+			vertices.AddRange(f.Vertices.Select (x => _CreateVector3FromPosition (x)).ToArray());
+			uv.AddRange (new Vector2[] { new Vector2 (0, 0), new Vector2 (0, 1), new Vector2 (1, 1) });
+		}
+		mesh.vertices = vertices.ToArray();
+		mesh.uv = uv.ToArray ();
+		mesh.triangles = Enumerable.Range(0, vertices.Count).ToArray();
+		mesh.RecalculateNormals();
+		mesh.RecalculateBounds();
+		go.GetComponent<Renderer> ().material =mat ;
+
+		var mc = go.AddComponent<MeshCollider> ();
+		mc.convex = true;
+		mc.enabled = true;
+		mc.inflateMesh = true;
+		mc.skinWidth = -0.1f;
+
+	}
 
 	static Vector3 _CreateVector3FromPosition(Vertex p){
 		return new Vector3 ((float)p.Position [0], (float)p.Position [1], (float)p.Position [2]);
 	}
 
-	static void _CreateTriangle(int cc, String e, Vector3[] vertices, Color color){
+	static void _CreateTriangle(int cc, String e, Vector3[] vertices, Material mat){
 		var parent = GameObject.Find(cc.ToString ());
 
 		var go = new GameObject(cc.ToString() + "-" + UnityEngine.Random.Range(0,100000).ToString());
 		go.transform.parent = parent.transform;
 		go.AddComponent<MeshFilter> ();
 		go.AddComponent<MeshRenderer> ();
+
 		Mesh mesh = new Mesh ();
 		go.GetComponent<MeshFilter> ().mesh = mesh;
 		mesh.vertices = vertices;
@@ -172,12 +193,13 @@ public class Voronoi : MonoBehaviour {
 		//				mesh.vertices =  new Vector3[] {new Vector3(sv.Position[0], 0, 0), new Vector3(0, 1, 0), new Vector3(1, 1, 0)};
 		//			
 		//			}
+		//TODO set uv based on vertex position
 		mesh.uv = new Vector2[] {new Vector2(0, 0), new Vector2(0, 1), new Vector2(1, 1)};
 		mesh.triangles = new int[] { 0, 1, 2 };
 
 		mesh.RecalculateNormals();
 		mesh.RecalculateBounds();
-		go.GetComponent<Renderer> ().material.color = color;
+		go.GetComponent<Renderer> ().material =mat ;
 	}
 	static void CreateTetrahedron(int cc,DefaultTriangulationCell<Vertex> e, Color color){
 		var p0 = new Vector3 ((float)e.Vertices [0].Position [0], (float)e.Vertices [0].Position [1], (float)e.Vertices [0].Position [2]);
@@ -259,13 +281,15 @@ public class Voronoi : MonoBehaviour {
 
 	void Start(){
 		var result = val();
-	
 
-
+		
 		//Debug.Log(Marshal.PtrToStringAuto(d));
 
-		Debug.Log (rnd());
+		//Debug.Log (rnd());
+		var start = System.DateTime.Now;
 		run ();
+		var end = System.DateTime.Now;
+		Debug.Log(String.Format("{0}, {1}, {2}" , start, end, end-start));
 	}
 
 	public class ClockwiseVector2Comparer : IComparer<Vertex>
