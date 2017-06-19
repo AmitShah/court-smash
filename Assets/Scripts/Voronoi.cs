@@ -163,12 +163,13 @@ public class Voronoi : MonoBehaviour {
 		mesh.RecalculateNormals();
 		mesh.RecalculateBounds();
 		go.GetComponent<Renderer> ().material =mat ;
-
+		go.transform.localScale = new Vector3 (8f, 6f, 0.1f);
 		var mc = go.AddComponent<MeshCollider> ();
 		mc.convex = true;
 		mc.enabled = true;
 		mc.inflateMesh = true;
 		mc.skinWidth = -0.1f;
+
 
 	}
 
