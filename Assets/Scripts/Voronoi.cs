@@ -28,7 +28,17 @@ public class Voronoi : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(Input.GetMouseButtonDown(0)){
+			var start = System.DateTime.Now;
+			//run ();
+
+			Debug.Log ("Running generate");
+			var go = run ();
+			var point = Camera.main.ScreenToWorldPoint(Input.mousePosition) - new Vector3(0f,0f,-2f);
+			go.transform.position = point;
+			var end = System.DateTime.Now;
+			Debug.Log(String.Format("{0}, {1}, {2}" , start, end, end-start));
+		}
 	}
 	const float mean = 0f;
 	const float stdDev = 0.25f;
@@ -47,7 +57,7 @@ public class Voronoi : MonoBehaviour {
 
 
 
-	unsafe void run()
+	unsafe GameObject run()
 	{
 		
 		const int dimension = 3;
@@ -91,6 +101,7 @@ public class Voronoi : MonoBehaviour {
 
 
 		var cc = 0;
+		var cube = new GameObject(String.Format("parent-{0}", UnityEngine.Random.Range(0,1000000)));
 
 		foreach (var vv in vc) {
 			cc++;
@@ -126,7 +137,7 @@ public class Voronoi : MonoBehaviour {
 				});
 			
 
-			_CreatePiece(convexHull,Resources.Load("BlockMaterial", typeof(Material)) as Material);
+			var go = _CreatePiece(convexHull,Resources.Load("BlockMaterial", typeof(Material)) as Material);
 //			foreach (var f in convexHull.Faces) {
 //				//Normal are populated for us
 //				//Debug.Log(String.Format("{0}, {1}, {2}, {3}", cc, f.Normal[0], f.Normal[1], f.Normal[2]));
@@ -139,15 +150,21 @@ public class Voronoi : MonoBehaviour {
 //
 //
 //			}
+			go.transform.parent = cube.transform;
 		}
+
+		return cube;
 
 	}
 
-	static void _CreatePiece(ConvexHull<Vertex,DefaultConvexFace<Vertex>> ch, Material mat){
+	static GameObject _CreatePiece(ConvexHull<Vertex,DefaultConvexFace<Vertex>> ch, Material mat){
 		var go = new GameObject();
 		go.AddComponent<MeshFilter> ();
 		go.AddComponent<MeshRenderer> ();
-		go.AddComponent<Rigidbody> ().useGravity = true;
+		var rb = go.AddComponent<Rigidbody> ();
+		rb.useGravity = true;
+		//rb.isKinematic = true;
+
 		Mesh mesh = new Mesh ();
 		go.GetComponent<MeshFilter> ().mesh = mesh;
 		//var count = 0;
@@ -163,13 +180,13 @@ public class Voronoi : MonoBehaviour {
 		mesh.RecalculateNormals();
 		mesh.RecalculateBounds();
 		go.GetComponent<Renderer> ().material =mat ;
-		go.transform.localScale = new Vector3 (8f, 6f, 0.1f);
+		go.transform.localScale = new Vector3 (1f, 1f, 1f);
 		var mc = go.AddComponent<MeshCollider> ();
 		mc.convex = true;
 		mc.enabled = true;
 		mc.inflateMesh = true;
 		mc.skinWidth = -0.1f;
-
+		return go;
 
 	}
 
@@ -288,7 +305,7 @@ public class Voronoi : MonoBehaviour {
 
 		//Debug.Log (rnd());
 		var start = System.DateTime.Now;
-		run ();
+		//run ();
 		var end = System.DateTime.Now;
 		Debug.Log(String.Format("{0}, {1}, {2}" , start, end, end-start));
 	}
